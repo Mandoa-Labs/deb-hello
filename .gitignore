@@ -1,0 +1,53 @@
+# =========================
+# Build artifacts
+# =========================
+
+# Object files
+*.o
+
+# Build directories
+/build/
+
+# Compiled binaries (inside package tree)
+usr/local/bin/hello
+
+# =========================
+# Debian packaging outputs
+# =========================
+
+# Built Debian packages
+*.deb
+
+# Generated Debian control file
+DEBIAN/control
+
+# dpkg temporary files
+*.buildinfo
+*.changes
+*.substvars
+
+# =========================
+# Editor / OS noise
+# =========================
+
+# Nano
+*.swp
+*.save
+
+# Vim
+*.swp
+*.swo
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# =========================
+# Logs
+# =========================
+*.log
