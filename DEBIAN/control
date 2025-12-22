@@ -1,0 +1,8 @@
+Package: hello-world-c
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: amd64
+Maintainer: Evan Allen <evan@example.com>
+Description: Hello World written in C
+ A minimal Debian package containing a compiled C binary.
