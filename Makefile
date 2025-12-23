@@ -45,10 +45,10 @@ $(CONTROL): $(CONTROL_IN)
 deb: $(CONTROL) all
 	dpkg-deb --build --root-owner-group . ..
 
-demo-path:
+demo:
     echo ${ARCH}
 	echo ${VERSION}
-	
+
 # Clean
 clean:
 	rm -rf $(OBJ_DIR)
