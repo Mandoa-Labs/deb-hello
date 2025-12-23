@@ -46,8 +46,8 @@ deb: $(CONTROL) all
 	dpkg-deb --build --root-owner-group . ..
 
 demo:
-    echo ${ARCH}
-	echo ${VERSION}
+    echo $(ARCH)
+	echo $(VERSION)
 
 # Clean
 clean:
