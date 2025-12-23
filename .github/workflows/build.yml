@@ -26,4 +26,4 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
            name: hello-world-c-$(uname -m).deb
-           path: ./hello-world-c-*.deb
+           path: hello-world-c-*.deb
