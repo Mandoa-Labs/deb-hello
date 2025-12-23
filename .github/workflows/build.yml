@@ -18,7 +18,6 @@ jobs:
 
       - name: Build Debian Package
         run: |
-          cd deb-hello
           make 
           make deb
           ls
