@@ -37,11 +37,9 @@ $(BIN): $(OBJ)
 	mkdir -p $(BIN_DIR)
 	$(CC) $(OBJ) -o $@ $(LDFLAGS)
 
+# Generate Debian control file
 $(CONTROL): $(CONTROL_IN)
-	sed \
-	  -e "s/@ARCH@/$(ARCH)/g" \
-	  -e "s/@VERSION@/$(VERSION)/g" \
-	  $< > $@
+	sed "s/@ARCH@/$(ARCH)/g" $< > $@
 	chmod 644 $@
 
 # Build the .deb package
