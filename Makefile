@@ -8,7 +8,7 @@ LDFLAGS :=
 export
 # From .env
 ARCH    := $(shell $ARCH)
-VERSION := $(shell $VERSION)
+VERSION := 1.0.0
 
 # Directories
 SRC_DIR := src
