@@ -4,8 +4,10 @@ CFLAGS  := -O2 -Wall -Wextra -std=c11
 LDFLAGS :=
 
 # Load .env if present
--include .env
-export
+include .env
+demo-path:
+    echo ${ARCH}
+	echo ${VERSION}
 # From .env
 ARCH    := $(shell $ARCH)
 VERSION := 1.0.0
