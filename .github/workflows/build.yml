@@ -20,7 +20,7 @@ jobs:
         run: |
           make 
           make deb
-          ls
+          ls -R
 
       # - name: Upload Debian Package
       #   uses: actions/upload-artifact@v6
