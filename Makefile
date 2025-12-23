@@ -50,7 +50,7 @@ $(CONTROL): $(CONTROL_IN)
 
 # Build the .deb package
 deb: $(CONTROL) all
-	dpkg-deb --build --root-owner-group . ..
+	dpkg-deb --build --root-owner-group . .
 
 # Clean
 clean:
