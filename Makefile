@@ -4,7 +4,7 @@ CFLAGS  := -O2 -Wall -Wextra -std=c11
 LDFLAGS :=
 
 # Load .env if present
-include .env
+# include .env
 demo-path:
     echo ${ARCH}
 	echo ${VERSION}
