@@ -3,11 +3,15 @@ CC      := gcc
 CFLAGS  := -O2 -Wall -Wextra -std=c11
 LDFLAGS :=
 
-# Load .env if present
-# include .env
+# Load variables from .env
+ifneq (,$(wildcard .env))
+        include .env
+        export
+endif
+
 # From .env
 ARCH    := $(shell $ARCH)
-VERSION := 1.0.0
+VERSION := $(shell $VERSION)
 
 # Directories
 SRC_DIR := src
@@ -44,10 +48,6 @@ $(CONTROL): $(CONTROL_IN)
 # Build the .deb package
 deb: $(CONTROL) all
 	dpkg-deb --build --root-owner-group . ..
-
-demo:
-    echo $(ARCH)
-	echo $(VERSION)
 
 # Clean
 clean:
