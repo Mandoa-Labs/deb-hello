@@ -22,6 +22,6 @@ jobs:
           make deb
 
       - name: Upload Debian Package
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6
         with:
           name: hello-world-c-$(uname -m).deb
