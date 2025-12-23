@@ -10,8 +10,8 @@ ifneq (,$(wildcard .env))
 endif
 
 # From .env
-ARCH    := $(shell $ARCH)
-VERSION := $(shell $VERSION)
+ARCH    := $(ARCH)
+VERSION := $(VERSION)
 
 # Directories
 SRC_DIR := src
