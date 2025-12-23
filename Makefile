@@ -3,7 +3,9 @@ CC      := gcc
 CFLAGS  := -O2 -Wall -Wextra -std=c11
 LDFLAGS :=
 
-source .env
+# Load .env if present
+-include .env
+export
 # From .env
 ARCH    := $(shell $ARCH)
 VERSION := $(shell $VERSION)
