@@ -9,6 +9,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-slim
+    strategy:
+      matrix:
+        arch: [armhf, arm64, amd64, i386]
 
     steps:
       - uses: actions/checkout@v4
@@ -16,11 +19,15 @@ jobs:
       - name: Install Libs
         run: sudo apt-get update && sudo apt-get install -y build-essential dpkg-dev
 
+      - name: Set up Environment
+        run: |
+          echo "ARCH=${{ matrix.arch }}" > .env
+          echo "VERSION=$(date +'%Y.%m.%d.%H%M%S')" >> .env
+
       - name: Build Debian Package
         run: |
           make 
           make deb
-          ls -R
 
       - name: Upload Debian Package
         uses: actions/upload-artifact@v6
