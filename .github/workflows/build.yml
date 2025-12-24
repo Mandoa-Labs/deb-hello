@@ -32,7 +32,7 @@ jobs:
       - name: Upload Debian Package
         uses: actions/upload-artifact@v6
         with:
-           name: hello-world-c-$(uname -m).deb
+           name: hello-world-${{ matrix.arch }}.deb
            path: "*.deb"
   release:
     runs-on: ubuntu-slim
