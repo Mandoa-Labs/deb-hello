@@ -1,8 +1,3 @@
-# Compiler and flags
-CC      := gcc
-CFLAGS  := -O2 -Wall -Wextra -std=c11
-LDFLAGS :=
-
 # Load variables from .env
 ifneq (,$(wildcard .env))
         include .env
@@ -12,6 +7,25 @@ endif
 # From .env
 ARCH    := $(ARCH)
 VERSION := $(VERSION)
+
+# Set compiler based on architecture
+ifeq ($(ARCH),armhf)
+        CC := arm-linux-gnueabihf-gcc
+else ifeq ($(ARCH),armv6l)
+        CC := arm-linux-gnueabihf-gcc
+else ifeq ($(ARCH),arm64)
+        CC := aarch64-linux-gnu-gcc
+else ifeq ($(ARCH),amd64)
+        CC := gcc
+else ifeq ($(ARCH),i386)
+        CC := i686-linux-gnu-gcc
+else
+        CC := gcc
+endif
+
+# Compiler flags
+CFLAGS  := -O2 -Wall -Wextra -std=c11
+LDFLAGS :=
 
 # Directories
 SRC_DIR := src
