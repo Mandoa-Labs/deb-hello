@@ -27,3 +27,19 @@ jobs:
         with:
            name: hello-world-c-$(uname -m).deb
            path: "*.deb"
+  release:
+    runs-on: ubuntu-slim
+    needs: build
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          files: dist/**/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
