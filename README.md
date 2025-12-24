@@ -44,8 +44,8 @@ hello
 
 ## Supported Architectures
 
-- `armhf` - ARM hard float (32-bit, e.g., Raspberry Pi)
-- `armv6l` - ARM v6 (uses same toolchain as armhf)
+- `armhf` - ARM hard float (32-bit, e.g., Raspberry Pi 2/3)
+- `armv6l` - ARM v6 (32-bit, e.g., Raspberry Pi Zero/1, uses same toolchain as armhf)
 - `arm64` - ARM 64-bit (e.g., Raspberry Pi 4/5, modern ARM servers)
 - `amd64` - x86-64 (64-bit Intel/AMD)
 - `i386` - x86 (32-bit Intel/AMD)

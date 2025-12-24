@@ -19,6 +19,9 @@ else ifeq ($(ARCH),amd64)
         CC := gcc
 else ifeq ($(ARCH),i386)
         CC := i686-linux-gnu-gcc
+else ifneq ($(ARCH),)
+        $(warning Unsupported architecture '$(ARCH)', falling back to native gcc)
+        CC := gcc
 else
         CC := gcc
 endif
